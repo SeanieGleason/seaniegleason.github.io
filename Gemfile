@@ -6,3 +6,4 @@ gem 'jekyll-redirect-from'
 
 gemspec
 
+gem "webrick"

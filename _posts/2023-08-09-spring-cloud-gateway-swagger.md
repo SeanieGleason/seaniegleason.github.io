@@ -139,6 +139,6 @@ _Consumers can now go to one place to find, view, and interact with all your API
 
 ---
 
-As always, the code for the [Spring Cloud Gateway](https://github.com/gleasonsean/spring-cloud-gateway-swagger-demo) 
-and the [REST API's](https://github.com/gleasonsean/rest-api-demo) can be found on my [github](https://github.com/gleasonsean).
+As always, the code for the [Spring Cloud Gateway](https://github.com/seaniegleason/spring-cloud-gateway-swagger-demo) 
+and the [REST API's](https://github.com/seaniegleason/rest-api-demo) can be found on my [github](https://github.com/seaniegleason).
 Thanks for reading, and until next time, _Keep your Platform Simple!_

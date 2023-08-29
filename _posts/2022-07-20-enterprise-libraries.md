@@ -63,6 +63,6 @@ freeing up application developers to develop, what else, apps!**
 
 **Cloud Platform teams should have one goal, make development easier for developers**. Writing internal libraries is
 hard, but using Spring Boot patterns can help make them a little more manageable. Check out the sample
-code [here](https://github.com/gleasonsean/spring-boot-enterprise).
+code [here](https://github.com/seaniegleason/spring-boot-enterprise).
 
 In the next article, I'll show the benefits of creating company starters and how to make your own autoconfiguration.

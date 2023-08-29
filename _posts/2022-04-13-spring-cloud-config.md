@@ -47,6 +47,6 @@ the Developers job is now easier, no longer having to maintain a Config Server t
 **Cloud Platform teams should have one goal, make development easier for developers**. I focus mainly on Spring Boot
 here, but this can apply to any other development experience. Application development is complicated, so is configuring
 it. Use the tools to your advantage, not against you. Check out the
-sample [config](https://github.com/gleasonsean/spring-boot-cloud-native/tree/main/src/main/resources)
-and [tests](https://github.com/gleasonsean/spring-boot-cloud-native/tree/main/src/test/java/gleason/tech/boot/properties)
+sample [config](https://github.com/seaniegleason/spring-boot-cloud-native/tree/main/src/main/resources)
+and [tests](https://github.com/seaniegleason/spring-boot-cloud-native/tree/main/src/test/java/gleason/tech/boot/properties)
 on github to see it in action!

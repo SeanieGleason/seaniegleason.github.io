@@ -78,7 +78,7 @@ with all the code included.
 ### How do we use the newly created enterprise starter and autoconfiguration?
 
 See all the action in this 
-[commit](https://github.com/gleasonsean/spring-boot-cloud-native/commit/f4b117eee74d3857330f3855a92f90c905848e0c) 
+[commit](https://github.com/seaniegleason/spring-boot-cloud-native/commit/f4b117eee74d3857330f3855a92f90c905848e0c) 
 on my 'spring-boot-cloud-native' microservice application.  I was able to remove my entire SwaggerConfiguration, now 
 being autoconfigured through our new starter.  In addition, adding 'spring-boot-gleason-starter-web-documentation' to my 
 dependencies means I no longer have to include any of the 'springdoc' or 'restdocs' dependencies since the starter now

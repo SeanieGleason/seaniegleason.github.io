@@ -22,19 +22,22 @@ PROFESSIONAL EXPERIENCE
 
 NISC - Lake Saint Louis, MO        March 2021– Present
 Senior Software Engineer - Cloud Platform and Infrastructure Development
-* Work on setting development standards company wide for Spring Boot Microservices.
-* Regularly present in development meetings showcasing new tools available in Spring.
-* Engineered search APIs using Elasticsearch, consuming change data captures with Kafka.
-* Scripted deployment of Elasticsearch/Kibana helm-charts to Kubernetes and AWS.
-* Developed walkthrough for upgrading Spring Boot Microservices from 2.x -> 2.6.x.
-* Wrote upgrade guide for transitioning from Spring Cloud OAuth to Spring Security.
-* Architected upgrade patterns for the Angular UI stack using Angular Bootstrap.
-* Designed Behavioral Driven Testing CI/CD pipeline running on Bamboo using Docker.
+* Lead a ‘Special Interest Group’ for Spring Boot.
+* Building development standards for utilizing Spring Boot.
+* Facilitate meetings for each Spring Boot revision and discuss new features relevant to the
+enterprise.
+* Collaborated and designed REST API standards to better streamline development efforts.
+* Integrated Behavior-Driven Testing into a CI/CD pipeline running on Bamboo using Docker.
+* Scripted deployment of Elasticsearch/Kibana Helm charts to Kubernetes and AWS.
+* Created a walkthrough for upgrading Spring Boot Microservices from 2.x to 3.x.
+* Wrote an upgrade guide for transitioning from Spring Cloud OAuth to Spring Security.
+* Engineered microservice search API using Elasticsearch, utilizing a Pub/Sub stream to sync
+data to and from the ‘source’ REST API.
 
 Perficient Inc. - Saint Louis, MO        April 2019 – March 2021
 Lead Technical Consultant
-* Lead multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.  
-* Created company specific Spring Boot Starter services that reduced the complexity to build an application all the way up to production.
+* Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
+* Created company specific Spring Boot Starters that reduced two stories per agile cycle.
 * Upgraded several Spring Boot applications to the latest version to allow for newer features.
 * Architected several Kafka Messaging designs that aided in rapid development.
 
@@ -50,5 +53,5 @@ Web Developer (2015 – 2018)
 
 EDUCATION
 
-Lindenwood University - St. Charles, MO        2013
-BS Computer Science
+Bachelor of Science - Computer Science May 2013 
+Lindenwood University - St. Charles, MO

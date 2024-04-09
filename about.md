@@ -6,7 +6,7 @@ redirect_from:
 subtitle:
 ---
 
-Download: [pdf](../resume/seanie_gleason_resume.pdf) [docx](../resume/seanie_gleason_resume.docx) [txt](../resume/seanie_gleason_resume.txt)
+Download: [pdf](../resume/seanie_gleason_resume.pdf) [txt](../resume/seanie_gleason_resume.txt)
 
 # Seanie Gleason
 
@@ -35,8 +35,17 @@ Mobile: 636-577-1601\
 
 SENIOR SOFTWARE ENGINEER – NISC, St. Louis MO March 2021 – present
 
-- Work on Cloud Platform and Infrastructure Development Team setting standards for developing Microservices using Spring
-  Boot, Cassandra, and Elasticsearch hosted on Kubernetes and AWS.
+- Lead a ‘Special Interest Group’ for Spring Boot.
+- Building development standards for utilizing Spring Boot.
+- Facilitate meetings for each Spring Boot revision and discuss new features relevant to the
+  enterprise.
+- Collaborated and designed REST API standards to better streamline development efforts.
+- Integrated Behavior-Driven Testing into a CI/CD pipeline running on Bamboo using Docker.
+- Scripted deployment of Elasticsearch/Kibana Helm charts to Kubernetes and AWS.
+- Created a walkthrough for upgrading Spring Boot Microservices from 2.x to 3.x.
+- Wrote an upgrade guide for transitioning from Spring Cloud OAuth to Spring Security.
+- Engineered microservice search API using Elasticsearch, utilizing a Pub/Sub stream to sync
+  data to and from the ‘source’ REST API.
 
 LEAD TECHNICAL CONSULTANT – Perficient, St. Louis MO April 2019 – March 2021
 

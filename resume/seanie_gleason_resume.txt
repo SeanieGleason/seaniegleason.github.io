@@ -2,41 +2,38 @@
 Saint Louis, Missouri • (636) 577-1601 • gleason.tech • seanie@gleason.tech
 
 SKILLS
-* Java - Spring Boot/Cloud
-* REST API Web Services
-* Apache Kafka
-* Elasticsearch
-* Angular UI
-* BDD Testing with Karate
-* VMWare Tanzu Application Services
-* Kubernetes
+* CI/CD Pipelines Bitbucket Cloud
+* Jenkins
+* Bash
+* Terraform
+* Docker
+* Karate Testing
+* Kubernetes SaaS
+* Cloud Foundry PaaS
 * Google Cloud Platform (GCP)
 * Amazon Web Services (AWS)
-* Mongo Database
-* Oracle Database
-* Cassandra Database
-* Jenkins CI/CD Pipelines
-* Bamboo CI/CD Pipelines
+* Mongo NoSql Database
+
+* Cassandra  Database
+* Java - Spring Boot/Cloud
+* Prometheus Reporting
+* Splunk Dashboards
+* Kafka Messaging
+* GCP Pub/Sub Messaging
+* AWS
 
 PROFESSIONAL EXPERIENCE
 
 NISC - Lake Saint Louis, MO        March 2021– Present
 Senior Software Engineer - Cloud Platform and Infrastructure Development
-* Lead a ‘Special Interest Group’ for Spring Boot.
-* Building development standards for utilizing Spring Boot.
-* Facilitate meetings for each Spring Boot revision and discuss new features relevant to the
-enterprise.
-* Collaborated and designed REST API standards to better streamline development efforts.
-* Integrated Behavior-Driven Testing into a CI/CD pipeline running on Bamboo using Docker.
-* Scripted deployment of Elasticsearch/Kibana Helm charts to Kubernetes and AWS.
-* Created a walkthrough for upgrading Spring Boot Microservices from 2.x to 3.x.
-* Wrote an upgrade guide for transitioning from Spring Cloud OAuth to Spring Security.
-* Engineered microservice search API using Elasticsearch, utilizing a Pub/Sub stream to sync
-data to and from the ‘source’ REST API.
+* Developed a custom Java framework with built-in dependency management and auto-configuration for RESTful web applications.
+* Designed and implemented a Blue-Green CI/CD pipeline using Bash, adaptable to any Docker-based environment via automated detection and installation of required Java and Gradle versions.
+* Created a Gradle plugin integrated with the CI/CD pipeline to automate and manage testing phases, including code coverage, mutation testing, contract testing, integration testing, and BDD.
+* Created Splunk Dashboard to scrap and maintain a Dashboard to keep track of Java/Spring Boot versions.
 
 Perficient Inc. - Saint Louis, MO        April 2019 – March 2021
 Lead Technical Consultant
-* Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
+* Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.  
 * Created company specific Spring Boot Starters that reduced two stories per agile cycle.
 * Upgraded several Spring Boot applications to the latest version to allow for newer features.
 * Architected several Kafka Messaging designs that aided in rapid development.
@@ -47,11 +44,11 @@ Lead Software Engineer (2018 – 2019)
 * Constructed a multi-cloud agnostic Jenkins pipeline using Spring Cloud Pipelines that allowed for deployment to two separate Cloud Foundry Foundations.
 
 Web Developer (2015 – 2018)
-* Developed Spring Boot microservice APIs on Pivotal Cloud Foundry in an effort to deconstruct the monolithic E-Commerce website
+* Developed Spring Boot microservice APIs on Pivotal Cloud Foundry to deconstruct the monolithic E-Commerce website
 * Designed and implemented the Punchout integration framework into the IBM E-Commerce website that produces a large majority of online order revenue
 * Built the E-Commerce checkout flow and developed SEO frameworks during the B2C/B2B website re-launch.
 
 EDUCATION
 
-Bachelor of Science - Computer Science May 2013 
+Bachelor of Science - Computer Science        May 2013
 Lindenwood University - St. Charles, MO

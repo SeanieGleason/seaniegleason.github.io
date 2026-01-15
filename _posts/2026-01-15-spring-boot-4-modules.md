@@ -28,7 +28,7 @@ This modular structure has the benefits of **improving maintainability**, enable
 The starters have stayed mostly the same, and still act as a convenience layer. It aggregates the most commonly used modules and provides sensible defaults so applications can get up and running quickly with minimal configuration. By depending on the starter, our developers can opt into an **opinionated**, **batteries-included experience** without needing to understand or manage each individual module.
 
 ## The New `core/` Directory
-n Spring Boot 4, this is where the Bill of Materials (BOM) was moved to centralize dependency and platform management.  If your unfamiliar with its purpose,
+In Spring Boot 4, this is where the Bill of Materials (BOM) was moved to centralize dependency and platform management.  If your unfamiliar with its purpose,
 the BOM defines the authoritative versions of Spring, third-party libraries, and internal modules used across the entire project. By relocating it into core, dependency alignment is no longer tied to a specific starter or feature set. Instead, it becomes a true platform concern that every module and starter inherits consistently.
 
 ## Does it really help?

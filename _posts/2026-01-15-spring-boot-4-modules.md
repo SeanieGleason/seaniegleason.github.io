@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Spring Boot 4 Modular approaches for Application Framework Teams
-subtitle: Spring Boot Architecture Rewrite and what it means for Application Framework Teams.
+title: Modular Spring Boot 4 for Application Framework Teams
+subtitle: Spring Boot 4 Architecture and what it means for Application Framework Teams.
 share-img: /assets/img/rubix.jpg
 ---
 ## Spring Boot 4 Modularization for Modern Design

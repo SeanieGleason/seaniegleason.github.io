@@ -4,8 +4,6 @@ title: Modular Spring Boot 4 for Application Framework Teams
 subtitle: Spring Boot 4 Architecture and what it means for Application Framework Teams.
 share-img: /assets/img/rubix.jpg
 ---
-## Spring Boot 4 Modularization for Modern Design
-
 In 2021, I led the initiative to adopt **Spring Boot** via a custom wrapper project, marking our company's first transition to a fully featured application framework.  By inheriting from Spring Boot, we were able to leverage its robust ecosystem while tailoring the architecture to our specific enterprise needs.  This allowed us to extend **Spring Boot Starters** with internal defaults, security standards, and pre-configured integrations.
 
 We have now officially migrated this architecture to **Spring Boot 4**.

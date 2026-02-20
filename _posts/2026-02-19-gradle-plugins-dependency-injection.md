@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating your own Gradle Plugin Configurations
-subtitle: Creating plain Objects In the Gradle Lifecycle using Domain Object Containers
+subtitle: Designing plain Objects In the Gradle Lifecycle using Domain Object Containers
 share-img: /assets/img/kotlin.jpg
 ---
 

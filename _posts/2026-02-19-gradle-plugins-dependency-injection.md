@@ -101,5 +101,5 @@ class GreetingPlugin @Inject constructor(private val objectFactory: ObjectFactor
 
 That's it!  
 
-Hopefully this helps you write your next framework plugin or add onto your existing plugins your writing.
+Hopefully this helps you write your next framework plugin or add onto you are existing plugins your writing.
 If you made it this far, thanks and hope to see you in the next article! 

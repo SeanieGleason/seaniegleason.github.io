@@ -48,8 +48,6 @@ abstract class Greetings @Inject constructor(private val name: String) {
 
 #### It gives our class a `square` shape to fit into a `square` hole
 
-## The Extensions API and Object Factory
-
 ## The Extension API
 
 The `project.extensions` api is our object junk drawer and is able to maintain configurability through the
@@ -75,7 +73,7 @@ class GreetingPlugin @Inject constructor(private val objectFactory: ObjectFactor
 }
 ```
 
-## Zooming in - The ObjectFactory
+## The ObjectFactory
 
 What if you don't need to expose an API but still want to use Gradle's Dependency Injection framework to ensure
 singleton's?
@@ -99,9 +97,9 @@ class GreetingPlugin @Inject constructor(private val objectFactory: ObjectFactor
 }
 ```
 
-#### ObjectFactory is the internal engine that runs everything in the Gradle Lifecycle. By using DomainObject Containers, we can easily 'load' any type of configuration class that does not require an external extension.
-
 ## Conclusion
 
-That's it!  Hopefully this helps you write your next framework plugin or add onto your existing plugins your writing.
+That's it!  
+
+Hopefully this helps you write your next framework plugin or add onto your existing plugins your writing.
 If you made it this far, thanks and hope to see you in the next article! 

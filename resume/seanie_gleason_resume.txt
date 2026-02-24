@@ -1,39 +1,31 @@
 ﻿SEANIE GLEASON
-Saint Louis, Missouri • (636) 577-1601 • gleason.tech • seanie@gleason.tech
+Saint Louis, Missouri * (636) 577-1601 * gleason.tech * seanie@gleason.tech
 
 SKILLS
-* CI/CD Pipelines Bitbucket Cloud
-* Jenkins
-* Bash
+* Java
+* CI/CD Pipelines
+* Spring Framework
+* Kubernetes
+* Amazon Web Services (AWS)
 * Terraform
 * Docker
-* Karate Testing
-* Kubernetes SaaS
-* Cloud Foundry PaaS
 * Google Cloud Platform (GCP)
-* Amazon Web Services (AWS)
 * Mongo NoSql Database
-
 * Cassandra  Database
-* Java - Spring Boot/Cloud
-* Prometheus Reporting
-* Splunk Dashboards
 * Kafka Messaging
 * GCP Pub/Sub Messaging
-* AWS
 
 PROFESSIONAL EXPERIENCE
 
 NISC - Lake Saint Louis, MO        March 2021– Present
-Senior Software Engineer - Cloud Platform and Infrastructure Development
-* Developed a custom Java framework with built-in dependency management and auto-configuration for RESTful web applications.
-* Designed and implemented a Blue-Green CI/CD pipeline using Bash, adaptable to any Docker-based environment via automated detection and installation of required Java and Gradle versions.
-* Created a Gradle plugin integrated with the CI/CD pipeline to automate and manage testing phases, including code coverage, mutation testing, contract testing, integration testing, and BDD.
-* Created Splunk Dashboard to scrap and maintain a Dashboard to keep track of Java/Spring Boot versions.
+Senior Software Engineer
+* Architected and implemented a core Java application framework mirroring Spring Boot’s inversion of control (IoC) and dependency injection patterns, standardizing microservices across a 300+ person engineering team.
+* Developed a scalable CI/CD pipeline specifically for complex integration testing, utilizing Docker and Kubernetes to spin up ephemeral environments for every PR.
+* Engineered a custom gradle plugin to standardize quality gates across the CI/CD pipeline, automating contract, mutation, and integration testing to ensure 100% architectural compliance.
 
 Perficient Inc. - Saint Louis, MO        April 2019 – March 2021
 Lead Technical Consultant
-* Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.  
+* Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
 * Created company specific Spring Boot Starters that reduced two stories per agile cycle.
 * Upgraded several Spring Boot applications to the latest version to allow for newer features.
 * Architected several Kafka Messaging designs that aided in rapid development.

@@ -6,7 +6,7 @@ share-img: /assets/img/ai/spring-ai-tool-search-tool-calling-flow.png
 ---
 
 **Performance and observability are the two biggest hurdles in bringing AI Agents from a prototype to production.**
-
+ 
 ## The AI "Thinking" Tax
 
 ![](../assets/img/framework.jpg)

@@ -9,7 +9,7 @@ share-img: /assets/img/framework.jpg
 
 ## The \"Platform-Specific\" Trap
 
-![](../assets/img/framework.jpg)
+![](../assets/img/itsatrap.jpg)
 
 As the LLM landscape evolves, we’re seeing a rise in model-specific \"skills\" or \"capabilities.\" Anthropic, for instance, has pioneered a powerful way to bundle instructions and scripts into discrete \"skills\" that their models can use. 
 

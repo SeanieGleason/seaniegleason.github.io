@@ -11,6 +11,9 @@ end
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1", :platforms => [:mingw, :x64_mingw, :mswin]
-  
+
+# Required for Ruby 3.4.0+ since bigdecimal is no longer a default gem
+gem "bigdecimal"
+
 gemspec
 

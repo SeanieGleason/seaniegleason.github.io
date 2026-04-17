@@ -1,4 +1,4 @@
----
+1111---
 layout: page
 title: About
 redirect_from:
@@ -9,56 +9,32 @@ subtitle:
 Download: [pdf](resume/seanie_gleason_resume.pdf) [docx](../resume/seanie_gleason_resume.docx) [txt](resume/seanie_gleason_resume.txt)
 
 # Seanie Gleason
+### Senior Software Engineer & Architect
 
-St. Louis, MO\
-Mobile: 636-577-1601\
-[seanie at gleason.tech](mailto:seanie@gleason.tech)\
-[github](https://github.com/seaniegleason) [linkedin](https://www.linkedin.com/in/seanie-gleason)
+Saint Louis, MO | [seanie@gleason.tech](mailto:seanie@gleason.tech) | [gleason.tech](https://gleason.tech) | [github](https://github.com/seaniegleason) | [linkedin](https://www.linkedin.com/in/seanie-gleason)
 
-### Skills
-* CI/CD Pipelines Bitbucket Cloud
-* Jenkins
-* Bash
-* Terraform
-* Docker
-* Karate Testing
-* Kubernetes SaaS
-* Cloud Foundry PaaS
-* Google Cloud Platform (GCP)
-* Amazon Web Services (AWS)
-* Mongo NoSql Database
+---
 
-* Cassandra  Database
-* Java - Spring Boot/Cloud
-* Prometheus Reporting
-* Splunk Dashboards
-* Kafka Messaging
-* GCP Pub/Sub Messaging
-* AWS
-
+### Professional Overview
+Innovative Senior Software Engineer specializing in the Java/Spring ecosystem and cloud-native platform engineering. Expert in crafting resilient microservice architectures, building sophisticated CI/CD pipelines with Kubernetes and Docker, and developing custom Gradle plugins for automated quality enforcement. Helping build an LLM-driven automation to create new applications and remove and boilerplate patterns.
 ### Professional Experience
 
-Senior Software Engineer - Cloud Platform and Infrastructure Development
-NISC - Lake Saint Louis, MO        March 2021– Present
-* Developed a custom Java framework with built-in dependency management and auto-configuration for RESTful web applications.
-* Designed and implemented a Blue-Green CI/CD pipeline using Bash, adaptable to any Docker-based environment via automated detection and installation of required Java and Gradle versions.
-* Created a Gradle plugin integrated with the CI/CD pipeline to automate and manage testing phases, including code coverage, mutation testing, contract testing, integration testing, and BDD.
-* Created Splunk Dashboard to scrap and maintain a Dashboard to keep track of Java/Spring Boot versions.
+Senior Software Engineer | National Information Solutions Cooperative, Lake St. Louis	MAR 2021 – PRESENT
+* Built a Java application framework using Spring Boot’s inversion of control (IoC) and dependency injection patterns, standardizing services across the organization.
+* Developed a scalable CI/CD pipeline specifically for complex integration testing, utilizing Docker and Kubernetes to spin up ephemeral environments for every PR.
+* Engineered a custom gradle plugin to standardize quality gates across the CI/CD pipeline, automating contract, mutation, and integration testing to ensure 100% architectural compliance.
 
-Lead Technical Consultant
-Perficient Inc. - Saint Louis, MO        April 2019 – March 2021
+Lead Technical Consultant| Perficient Inc., St. Louis	APR 2019 –  MAR 2021
 * Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
-* Created company specific Spring Boot Starters that reduced two stories per agile cycle.
-* Upgraded several Spring Boot applications to the latest version to allow for newer features.
-* Architected several Kafka Messaging designs that aided in rapid development.
+* Managed large-scale legacy-to-cloud migrations and version upgrades, ensuring modern security, performance, and scalability standards were consistently met
 
-Lead Software Engineer (2018 – 2019)
-Graybar Electric - Maryland Heights, MO        June 2015 - April 2019
-* Lead a team building Spring Cloud Dataflow pipelines using GCP PubSub to transfer data between an On-Premise and Off-premise Cloud Foundry installation.
-* Constructed a multi-cloud agnostic Jenkins pipeline using Spring Cloud Pipelines that allowed for deployment to two separate Cloud Foundry Foundations.
+Lead Software Engineer | Graybar Electric, St. Louis	JUN 2015 – APR 2019
+* Developed a multi-cloud data synchronization strategy using Spring Cloud Dataϐlow and GCP Pub/Sub, bridging on-premise and cloud ecosystems for reliable data mobility
+* Modernized the E-Commerce landscape by transitioning monolithic systems into scalable Spring Boot microservices on Pivotal Cloud Foundry.
 
-Web Developer (2015 – 2018)
-Graybar Electric - Maryland Heights, MO        June 2015 - April 2019
-* Developed Spring Boot microservice APIs on Pivotal Cloud Foundry to deconstruct the monolithic E-Commerce website
-* Designed and implemented the Punchout integration framework into the IBM E-Commerce website that produces a large majority of online order revenue
-* Built the E-Commerce checkout flow and developed SEO frameworks during the B2C/B2B website re-launch.
+### Skills
+Java Frameworks,CI/CD Pipelines, Pub Sub Messaging (Kafka)
+Kubernetes, Amazon Web Services (AWS), Terraform
+Docker	MongoDB (NoSql)	Cloud Foundry
+### Education
+Bachelor of Science in Computer Science | Lindenwood University – St. Charles, MO	Graduated: 2013

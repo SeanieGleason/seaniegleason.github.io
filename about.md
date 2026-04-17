@@ -26,7 +26,7 @@ Senior Software Engineer | National Information Solutions Cooperative, Lake St. 
 
 Lead Technical Consultant| Perficient Inc., St. Louis	APR 2019 –  MAR 2021
 * Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
-* Managed large-scale legacy-to-cloud migrations and version upgrades, ensuring modern security, performance, and scalability standards were consistently met
+* Managed large-scale legacy-to-cloud migrations and version upgrades, ensuring modern security, performance, and scalability standards were consistently met.
 
 Lead Software Engineer | Graybar Electric, St. Louis	JUN 2015 – APR 2019
 * Developed a multi-cloud data synchronization strategy using Spring Cloud Dataϐlow and GCP Pub/Sub, bridging on-premise and cloud ecosystems for reliable data mobility

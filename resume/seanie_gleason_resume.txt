@@ -1,44 +1,34 @@
-SEANIE GLEASON
-Saint Louis, Missouri • (636) 577-1601 • gleason.tech • seanie@gleason.tech
+Seanie Gleason
 
-SUMMARY
-Strategic Senior Software Engineer and Architect with a proven track record of engineering high-scale, mission-critical distributed systems. Expert in crafting resilient microservice architectures, leading platform engineering initiatives, and leveraging AI-driven automation to enhance development velocity. Focused on architectural integrity, technical leadership, and delivering measurable business value through robust technical solutions.
+Senior Software Engineer
 
-CORE COMPETENCIES
-* Architectures: Microservices, Distributed Systems, Event-Driven Architecture (EDA), Cloud-Native
-* Languages & Frameworks: Java (Expert), Spring Framework (Boot, Cloud, Security, Data), Kotlin
-* Cloud & Infrastructure: AWS, Google Cloud Platform (GCP), Kubernetes, Docker, Terraform (IaC)
-* Messaging & Data: Kafka, GCP Pub/Sub, MongoDB, Cassandra, SQL
-* DevOps & Platform: CI/CD (GitHub Actions, Jenkins), Gradle/Maven Plugin Development, Platform Engineering
-* AI & Automation: LLM-driven Code Generation, Automated Migration Frameworks, Custom AI Skills
+(636) 577-1601  |  seanie@gleason.tech  |  St. Louis, MO  |  linkedin.com/in/seanie-gleason
 
-PROFESSIONAL EXPERIENCE
+PROFESSIONAL   OVERVIEW
 
-NISC - Lake Saint Louis, MO        March 2021 – Present
-Senior Software Engineer / Architect
-* Led the architectural design and implementation of a core Java application framework, utilizing Spring Boot’s Inversion of Control (IoC) and dependency injection patterns to standardize microservices for a 300+ person engineering organization.
-* Enhanced developer productivity by developing custom AI-driven automation (Gemini/LLM skills) for seamless Spring Boot upgrades and boilerplate application generation, significantly reducing manual migration effort.
-* Developed a high-performance CI/CD ecosystem on Kubernetes, utilizing ephemeral environments for comprehensive integration testing to ensure architectural compliance and reliable deployments.
-* Created sophisticated custom Gradle plugins to institutionalize quality gates, automating contract, mutation, and integration testing across the entire CI/CD pipeline.
+Innovative Senior Software Engineer specializing in the Java/Spring ecosystem and cloud-native platform engineering. Expert in crafting resilient microservice architectures, building sophisticated CI/CD pipelines with Kubernetes and Docker, and developing custom Gradle plugins for automated quality enforcement. Helping build an LLM-driven automation to create new applications and remove and boilerplate patterns.
 
-Perficient Inc. - Saint Louis, MO        April 2019 – March 2021
-Lead Technical Consultant
-* Directed cross-functional teams in the delivery of complex microservice architectures for a major pharmaceutical distributor, leveraging Spring Boot and Kafka on Pivotal Cloud Foundry to handle high data throughput.
-* Developed proprietary Spring Boot Starters that improved development velocity by 20%, eliminating redundant setup tasks and standardizing common enterprise patterns.
-* Managed large-scale legacy-to-cloud migrations and version upgrades, ensuring modern security, performance, and scalability standards were consistently met.
-* Designed and implemented efficient Kafka messaging patterns that facilitated rapid feature development and improved system decoupling.
+WORK   EXPERIENCE
 
-Graybar Electric - Maryland Heights, MO        June 2015 - April 2019
-Lead Software Engineer (2018 – 2019) 
-* Developed a multi-cloud data synchronization strategy using Spring Cloud Dataflow and GCP Pub/Sub, bridging on-premise and cloud ecosystems for reliable data mobility.
-* Built cloud-agnostic deployment pipelines using Spring Cloud Pipelines, enabling consistent and reliable deployments across diverse Cloud Foundry Foundations.
+Senior Software Engineer | National Information Solutions Cooperative, Lake St. Louis	MAR 2021 – PRESENT
+    • Built a Java application framework using Spring Boot’s inversion of control (IoC) and dependency injection patterns, standardizing services across the organization.
+    • Developed a scalable CI/CD pipeline specifically for complex integration testing, utilizing Docker and Kubernetes to spin up ephemeral environments for every PR.
+    • Engineered a custom gradle plugin to standardize quality gates across the CI/CD pipeline, automating contract, mutation, and integration testing to ensure 100% architectural compliance.
 
-Web Developer (2015 – 2018)
-* Developed high-revenue E-Commerce integrations, specifically the Punchout framework for IBM E-Commerce, which generates a significant portion of the company's online revenue.
-* Modernized the E-Commerce landscape by transitioning monolithic systems into scalable Spring Boot microservices on Pivotal Cloud Foundry.
-* Implemented high-performance checkout flows and SEO frameworks that directly contributed to increased conversion rates during a major B2C/B2B site relaunch.
+ Lead Technical Consultant| Perficient Inc., St. Louis	APR 2019 –  MAR 2021
+    • Managed multiple teams for a major Pharmaceutical Distributor developing Spring Boot Microservice APIs on Pivotal Cloud Foundry using Kafka Stream Messaging for intercommunication between services.
+    • Managed large-scale legacy-to-cloud migrations and version upgrades, ensuring modern security, performance, and scalability standards were consistently met
+
+Lead Software Engineer | Graybar Electric, St. Louis	JUN 2015 – APR 2019
+    • Developed a multi-cloud data synchronization strategy using Spring Cloud Dataϐlow and GCP Pub/Sub, bridging on-premise and cloud ecosystems for reliable data mobility
+    • Modernized the E-Commerce landscape by transitioning monolithic systems into scalable Spring Boot microservices on Pivotal Cloud Foundry.
 
 EDUCATION
 
-Bachelor of Science - Computer Science        May 2013
-Lindenwood University - St. Charles, MO
+Bachelor of Science in Computer Science | Lindenwood University – St. Charles, MO	Graduated: 2013
+
+SKILLS
+
+Java Frameworks	CI/CD Pipelines	Pub Sub Messaging (Kafka)
+Kubernetes	Amazon Web Services (AWS)	MongoDB (NoSql)
+Docker	Terraform	Cloud Foundry

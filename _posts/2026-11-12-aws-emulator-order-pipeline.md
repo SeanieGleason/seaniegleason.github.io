@@ -168,7 +168,14 @@ Embedded mode compiles the emulator into your test binary, which means every ser
 * cache `target/` (or use sccache) in CI,
 * pin the emulator to a release commit.
 
-Building from source is officially supported on Linux. On Windows and macOS, run the server-mode container and point the same binary at it:
+Building from source is officially supported on Linux only, and I hit that limit: on Windows the build stops in a third-party dependency (`rustpython-host_env`) before reaching any of my code. Two things helped. First, seed your `Cargo.lock` from the emulator's, so your project resolves the same dependency versions it was tested with. Second, on Windows or macOS, run `cargo test` inside a Linux container:
+
+```bash
+docker run --rm -v "$PWD/..:/work" -w /work/aws-emulator-order-pipeline \
+  -e CARGO_TARGET_DIR=/work/target-linux rust:latest cargo test
+```
+
+Or skip embedded mode, run the server-mode container, and point the same binary at it:
 
 ```bash
 export AWS_ENDPOINT_URL=https://localhost:9297 AWS_REGION=us-east-1

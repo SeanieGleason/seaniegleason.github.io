@@ -95,6 +95,9 @@ share-links-active:
   vk: false
   reddit: false
 
+# Full site address, used to make share images and canonical links absolute
+url: "https://gleason.tech"
+
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
 url-pretty: "Seanie Gleason"

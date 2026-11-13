@@ -22,8 +22,8 @@ A mock library won't catch these, because a mock does whatever you told it to. A
 
 [AWS Emulator](https://github.com/aws/aws-emulator) is a local implementation of the AWS APIs, generated from the same Smithy models the SDKs are built from. It runs two ways:
 
-* **Server mode.** A process (a package on Linux, a container on Windows and macOS) serving HTTPS on `localhost:9297`. You set `AWS_ENDPOINT_URL` and any SDK or the AWS CLI talks to it.
-* **Embedded mode.** A Rust crate you add as a dev-dependency. Each test builds its own emulator in memory and hands its HTTP client to the SDK. There's no port, no certificate, no environment variable, and no shared state between tests.
+* **Server mode:** a process (a package on Linux, a container on Windows and macOS) serving HTTPS on `localhost:9297`. You set `AWS_ENDPOINT_URL` and any SDK or the AWS CLI talks to it.
+* **Embedded mode:** a Rust crate you add as a dev-dependency. Each test builds its own emulator in memory and hands its HTTP client to the SDK. There's no port, no certificate, no environment variable, and no shared state between tests.
 
 Embedded mode is the interesting one, so that's what this post uses.
 
@@ -149,7 +149,7 @@ async fn a_valid_order_is_stored_receipted_and_announced() {
 
 **Redelivery.** Upload the same order under two keys. One is `Processed`, the other is `Duplicate`, and the table has one row.
 
-This test failed on its first run, and the emulator was right. I had written it to stop after the worker reported any two outcomes. But when you configure a bucket notification, S3 sends an `s3:TestEvent` message to the queue, and my worker correctly reported it as `Ignored`. That used up one of the two slots before the duplicate arrived. The fix was to wait for the specific outcomes, not a count. It's exactly the kind of thing a mock would never have shown me.
+This test failed on its first run, and the emulator was right. I had written it to stop after the worker reported any two outcomes. But when you configure a bucket notification, S3 sends an `s3:TestEvent` message to the queue, and my worker correctly reported it as `Ignored`. That used up one of the two slots before the duplicate arrived. The fix was to wait for the specific outcomes, not a count. A mock would never have shown me that.
 
 **Isolation.** Provision a pipeline in one emulator, create a second emulator, and list its buckets. The list is empty. This is why the tests can run in parallel without unique names or cleanup code.
 
@@ -160,7 +160,7 @@ The emulator doesn't cover everything yet, and the project says so. Every known 
 * `issues/things-that-do-not-work/` lists APIs and behaviours that are wrong today.
 * `issues/things-that-now-work/` is where they move once fixed.
 
-At the time of writing that's roughly 13,000 fixed entries and 7,000 open ones. Each release also publishes per-service fidelity scores. Before you adopt it, search the open issues for the operations your app uses. For this sample, the open S3→SQS items are about edge cases (S3 doesn't check that the queue policy actually grants it access, and the ETag in event payloads keeps its quotes), not the happy path. That's also the reason the sample sets the queue policies anyway: the same code has to work against real AWS, where those policies are enforced.
+At the time of writing that's roughly 13,000 fixed entries and 7,000 open ones. Each release also publishes per-service fidelity scores. Before you adopt it, search the open issues for the operations your app uses. For this sample, the open S3→SQS items are about edge cases (S3 doesn't check that the queue policy grants it access, and the ETag in event payloads keeps its quotes), not the happy path. That's also the reason the sample sets the queue policies anyway: the same code has to work against real AWS, where those policies are enforced.
 
 ## The cost: the first build
 

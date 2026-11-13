@@ -3,6 +3,8 @@ layout: post
 title: "Integration-Testing an Event-Driven AWS App Without an AWS Account"
 subtitle: "S3, SQS, SNS and DynamoDB, wired together and tested in-process with AWS Emulator."
 tags: [aws, rust, testing]
+cover-img: /assets/img/aws-emulator/header.svg
+share-img: /assets/img/aws-emulator/share.png
 ---
 
 **Mocks are fast and wrong. A real AWS account is right and slow. Most event-driven code gets tested with neither.**
@@ -25,18 +27,15 @@ A mock library won't catch these, because a mock does whatever you told it to. A
 * **Server mode:** a process (a package on Linux, a container on Windows and macOS) serving HTTPS on `localhost:9297`. You set `AWS_ENDPOINT_URL` and any SDK or the AWS CLI talks to it.
 * **Embedded mode:** a Rust crate you add as a dev-dependency. Each test builds its own emulator in memory and hands its HTTP client to the SDK. There's no port, no certificate, no environment variable, and no shared state between tests.
 
+![Embedded mode runs your code, the AWS SDK and the emulator in one test process. Server mode calls a separate emulator process over HTTPS on port 9297.](/assets/img/aws-emulator/modes.svg)
+
 Embedded mode is the interesting one, so that's what this post uses.
 
 ## The sample: an order pipeline
 
 The full project is at [aws-emulator-order-pipeline](https://github.com/SeanieGleason/aws-emulator-order-pipeline).
 
-```text
-PUT incoming/order.json ─► S3 ─(ObjectCreated)─► SQS orders ─► worker ─► DynamoDB orders
-                                                   │              ├─► S3 receipts/<id>.json
-                                     (2 failures)  ▼              └─► SNS order-processed ─► SQS notifications
-                                              SQS orders-dlq
-```
+![A customer uploads an order to S3. S3 sends an ObjectCreated event to the orders SQS queue. The worker stores the order once in DynamoDB, writes a receipt to S3, and publishes to an SNS topic that delivers to a notifications queue. A message that fails twice moves to orders-dlq.](/assets/img/aws-emulator/pipeline.svg)
 
 A customer uploads an order document. The worker validates it, stores it once, writes a receipt, and announces it. An order that fails validation twice is moved by SQS to a dead-letter queue.
 
@@ -147,9 +146,13 @@ async fn a_valid_order_is_stored_receipted_and_announced() {
 
 **The poison message.** Upload an order with no line items. The worker rejects it twice, and the next receive finds the orders queue empty because SQS moved the message to the dead-letter queue. That only works if the redrive policy, the ARN it points at, and the worker's "don't delete on failure" behaviour all agree. A mock would have accepted any of them being wrong.
 
+![Receives 1 and 2 are rejected and made visible again. On receive 3 the count would pass the limit of 2, so SQS moves the message to orders-dlq, where the test finds it.](/assets/img/aws-emulator/redrive.svg)
+
 **Redelivery.** Upload the same order under two keys. One is `Processed`, the other is `Duplicate`, and the table has one row.
 
 This test failed on its first run, and the emulator was right. I had written it to stop after the worker reported any two outcomes. But when you configure a bucket notification, S3 sends an `s3:TestEvent` message to the queue, and my worker correctly reported it as `Ignored`. That used up one of the two slots before the duplicate arrived. The fix was to wait for the specific outcomes, not a count. A mock would never have shown me that.
+
+![The queue held s3:TestEvent, order-2002.json and order-2002-retry.json, which the worker reported as Ignored, Processed and Duplicate. Stopping after any two outcomes never reaches Duplicate; waiting for both Processed and Duplicate does.](/assets/img/aws-emulator/test-event.svg)
 
 **Isolation.** Provision a pipeline in one emulator, create a second emulator, and list its buckets. The list is empty. This is why the tests can run in parallel without unique names or cleanup code.
 

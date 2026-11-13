@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560" role="img" aria-labelledby="t d">
+  <title id="t">The order pipeline</title>
+  <desc id="d">A customer uploads an order to the S3 bucket under incoming/. S3 sends an ObjectCreated event to the orders SQS queue. The worker receives it, stores the order once in DynamoDB, writes a receipt to S3 under receipts/, and publishes to the order-processed SNS topic, which delivers to the notifications SQS queue. A message that fails twice is moved by SQS to the orders-dlq queue.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#dc2626"/>
+    </marker>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5"/><path d="M9 13h7M9 17h7"/></g></symbol>
+    <symbol id="i-bucket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="9" ry="3"/><path d="M3 6l2.5 13c.3 1.7 3 3 6.5 3s6.2-1.3 6.5-3L21 6"/></g></symbol>
+    <symbol id="i-queue" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="5" rx="1.5"/><rect x="3" y="10" width="18" height="5" rx="1.5"/><rect x="3" y="17" width="18" height="5" rx="1.5"/></g></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g></symbol>
+    <symbol id="i-topic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M8 8a5.6 5.6 0 0 0 0 8M16 8a5.6 5.6 0 0 1 0 8M5 5a9.9 9.9 0 0 0 0 14M19 5a9.9 9.9 0 0 1 0 14"/></g></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></g></symbol>
+    <style>
+      .title { font: 600 17px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+      .sub { font: 14px "Cascadia Mono", Consolas, Menlo, monospace; fill: #475569; }
+      .edge { font: 13.5px "Cascadia Mono", Consolas, Menlo, monospace; fill: #475569; }
+      .note { font: 14.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #475569; }
+      .line { fill: none; stroke: #64748b; stroke-width: 1.8; }
+    </style>
+  </defs>
+
+  <rect width="860" height="560" fill="#ffffff"/>
+
+  <rect x="20" y="30" width="200" height="72" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <use href="#i-doc" x="36" y="54" width="24" height="24" color="#475569"/>
+  <text class="title" x="72" y="62">Customer</text>
+  <text class="sub" x="72" y="83">order.json</text>
+
+  <rect x="330" y="30" width="200" height="72" rx="12" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+  <use href="#i-bucket" x="346" y="54" width="24" height="24" color="#16a34a"/>
+  <text class="title" x="382" y="62">S3 bucket</text>
+  <text class="sub" x="382" y="83">incoming/</text>
+
+  <rect x="640" y="30" width="200" height="72" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <use href="#i-queue" x="656" y="54" width="24" height="24" color="#d97706"/>
+  <text class="title" x="692" y="62">SQS queue</text>
+  <text class="sub" x="692" y="83">orders</text>
+
+  <rect x="330" y="170" width="200" height="72" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <use href="#i-queue" x="346" y="194" width="24" height="24" color="#dc2626"/>
+  <text class="title" x="382" y="202">SQS queue</text>
+  <text class="sub" x="382" y="223">orders-dlq</text>
+
+  <rect x="640" y="170" width="200" height="72" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+  <use href="#i-code" x="656" y="194" width="24" height="24" color="#0f766e"/>
+  <text class="title" x="692" y="202">Worker</text>
+  <text class="sub" x="692" y="223">your code</text>
+
+  <rect x="20" y="320" width="200" height="72" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <use href="#i-db" x="36" y="344" width="24" height="24" color="#2563eb"/>
+  <text class="title" x="72" y="352">DynamoDB</text>
+  <text class="sub" x="72" y="373">orders table</text>
+
+  <rect x="330" y="320" width="200" height="72" rx="12" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+  <use href="#i-bucket" x="346" y="344" width="24" height="24" color="#16a34a"/>
+  <text class="title" x="382" y="352">S3 bucket</text>
+  <text class="sub" x="382" y="373">receipts/</text>
+
+  <rect x="640" y="320" width="200" height="72" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <use href="#i-topic" x="656" y="344" width="24" height="24" color="#7c3aed"/>
+  <text class="title" x="692" y="352">SNS topic</text>
+  <text class="sub" x="692" y="373">order-processed</text>
+
+  <rect x="640" y="460" width="200" height="72" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <use href="#i-queue" x="656" y="484" width="24" height="24" color="#d97706"/>
+  <text class="title" x="692" y="492">SQS queue</text>
+  <text class="sub" x="692" y="513">notifications</text>
+
+  <path class="line" d="M220 66H326" marker-end="url(#arrow)"/>
+  <text class="edge" x="275" y="56" text-anchor="middle">PUT</text>
+
+  <path class="line" d="M530 66H636" marker-end="url(#arrow)"/>
+  <text class="edge" x="583" y="56" text-anchor="middle" style="font-size:12px">ObjectCreated</text>
+
+  <path class="line" d="M790 102V166" marker-end="url(#arrow)"/>
+  <text class="edge" x="782" y="140" text-anchor="end">receive</text>
+
+  <path d="M690 102V132H430V166" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
+  <text class="edge" x="560" y="124" text-anchor="middle" style="fill:#b91c1c">after 2 failed receives</text>
+
+  <path class="line" d="M740 242V276H120V316" marker-end="url(#arrow)"/>
+  <path class="line" d="M430 276V316" marker-end="url(#arrow)"/>
+  <path class="line" d="M740 276V316" marker-end="url(#arrow)"/>
+  <text class="edge" x="128" y="304">store once</text>
+  <text class="edge" x="438" y="304">receipt</text>
+  <text class="edge" x="748" y="304">publish</text>
+
+  <path class="line" d="M740 392V456" marker-end="url(#arrow)"/>
+  <text class="edge" x="732" y="430" text-anchor="end">subscribed</text>
+
+  <g transform="translate(20 470)">
+    <rect x="0" y="0" width="16" height="16" rx="3" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+    <text class="note" x="26" y="13">your code</text>
+    <rect x="0" y="30" width="16" height="16" rx="3" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+    <rect x="20" y="30" width="16" height="16" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="40" y="30" width="16" height="16" rx="3" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <rect x="60" y="30" width="16" height="16" rx="3" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text class="note" x="86" y="43">AWS services, served by the emulator</text>
+  </g>
+</svg>

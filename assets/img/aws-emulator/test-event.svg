@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" width="860" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Why the first redelivery test failed</title>
+  <desc id="d">The orders queue held three messages in order: s3:TestEvent, sent by S3 when the bucket notification was configured; order-2002.json; and order-2002-retry.json. The worker reported Ignored, Processed and Duplicate. The first version of the test stopped after any two outcomes, so it never saw Duplicate and failed. The fixed test waits until it has seen both Processed and Duplicate.</desc>
+  <defs>
+    <style>
+      .hdr { font: 600 13px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #64748b; letter-spacing: 0.06em; }
+      .small { font: 13.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #64748b; }
+      .msg { font: 600 15px "Cascadia Mono", Consolas, Menlo, monospace; fill: #0f172a; }
+      .pill { font: 600 15.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+      .verdict { font: 600 16px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="400" fill="#ffffff"/>
+
+  <text class="hdr" x="20" y="30">ORDERS QUEUE, IN ORDER</text>
+
+  <rect x="20" y="44" width="260" height="68" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text class="msg" x="150" y="72" text-anchor="middle">s3:TestEvent</text>
+  <text class="small" x="150" y="96" text-anchor="middle">sent when the notification is set up</text>
+
+  <rect x="300" y="44" width="260" height="68" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text class="msg" x="430" y="72" text-anchor="middle">order-2002.json</text>
+  <text class="small" x="430" y="96" text-anchor="middle">first upload</text>
+
+  <rect x="580" y="44" width="260" height="68" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text class="msg" x="710" y="72" text-anchor="middle">order-2002-retry.json</text>
+  <text class="small" x="710" y="96" text-anchor="middle">same order, second key</text>
+
+  <text class="hdr" x="20" y="150">WORKER REPORTS</text>
+  <path d="M150 112V164M430 112V164M710 112V164" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <rect x="80" y="164" width="140" height="36" rx="18" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text class="pill" x="150" y="187" text-anchor="middle" style="fill:#475569">Ignored</text>
+  <rect x="360" y="164" width="140" height="36" rx="18" fill="#ecfdf3" stroke="#16a34a"/>
+  <text class="pill" x="430" y="187" text-anchor="middle" style="fill:#15803d">Processed</text>
+  <rect x="640" y="164" width="140" height="36" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+  <text class="pill" x="710" y="187" text-anchor="middle" style="fill:#1d4ed8">Duplicate</text>
+
+  <path d="M20 232V242H560V232" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text class="verdict" x="290" y="270" text-anchor="middle" style="fill:#b91c1c">✗ first version: stop after any 2 outcomes</text>
+  <text class="verdict" x="290" y="292" text-anchor="middle" style="fill:#b91c1c">never sees Duplicate, test fails</text>
+
+  <path d="M20 324V334H840V324" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text class="verdict" x="430" y="362" text-anchor="middle" style="fill:#15803d">✓ fixed: wait until Processed and Duplicate are both seen</text>
+</svg>

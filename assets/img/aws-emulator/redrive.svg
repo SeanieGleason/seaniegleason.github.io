@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 430" width="860" height="430" role="img" aria-labelledby="t d">
+  <title id="t">How a poison message reaches the dead-letter queue</title>
+  <desc id="d">Receive 1: receive count 1 of 2, the worker rejects the order, visibility timeout set to 0. Receive 2: count 2 of 2, rejected again, visibility timeout 0. Receive 3: the count would be 3, over the limit, so SQS moves the message to orders-dlq and the worker receives nothing. In orders-dlq the test finds the message and checks it is not in DynamoDB.</desc>
+  <defs>
+    <style>
+      .hdr { font: 600 13px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #64748b; letter-spacing: 0.06em; }
+      .step { font: 600 16px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+      .cell { font: 15.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+      .mono { font: 14px "Cascadia Mono", Consolas, Menlo, monospace; fill: #0f172a; }
+      .num { font: 700 15px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #ffffff; }
+      .cap { font: 15px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #475569; }
+      .bad { fill: #b91c1c; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect width="860" height="430" fill="#ffffff"/>
+
+  <text class="hdr" x="70" y="34">ATTEMPT</text>
+  <text class="hdr" x="230" y="34">RECEIVE COUNT</text>
+  <text class="hdr" x="410" y="34">WORKER</text>
+  <text class="hdr" x="620" y="34">THEN</text>
+
+  <line x1="38" y1="80" x2="38" y2="320" stroke="#cbd5e1" stroke-width="3"/>
+
+  <rect x="20" y="50" width="820" height="64" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+  <circle cx="38" cy="82" r="14" fill="#d97706"/>
+  <text class="num" x="38" y="87" text-anchor="middle">1</text>
+  <text class="step" x="70" y="88">Receive #1</text>
+  <text class="cell" x="230" y="88">1 of 2</text>
+  <text class="cell bad" x="410" y="88">Rejected: no line items</text>
+  <text class="mono" x="620" y="88">visibility timeout 0</text>
+
+  <rect x="20" y="130" width="820" height="64" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+  <circle cx="38" cy="162" r="14" fill="#d97706"/>
+  <text class="num" x="38" y="167" text-anchor="middle">2</text>
+  <text class="step" x="70" y="168">Receive #2</text>
+  <text class="cell" x="230" y="168">2 of 2</text>
+  <text class="cell bad" x="410" y="168">Rejected again</text>
+  <text class="mono" x="620" y="168">visibility timeout 0</text>
+
+  <rect x="20" y="210" width="820" height="64" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+  <circle cx="38" cy="242" r="14" fill="#d97706"/>
+  <text class="num" x="38" y="247" text-anchor="middle">3</text>
+  <text class="step" x="70" y="248">Receive #3</text>
+  <text class="cell" x="230" y="248">would be 3</text>
+  <text class="cell" x="410" y="248">receives nothing</text>
+  <text class="cell" x="620" y="248">SQS moves it to</text>
+  <text class="mono" x="620" y="266" style="fill:#b91c1c">orders-dlq</text>
+
+  <rect x="20" y="290" width="820" height="64" rx="12" fill="#fef2f2" stroke="#fca5a5"/>
+  <circle cx="38" cy="322" r="14" fill="#dc2626"/>
+  <text class="num" x="38" y="327" text-anchor="middle">✓</text>
+  <text class="step" x="70" y="328">orders-dlq</text>
+  <text class="cell" x="230" y="328">message parked</text>
+  <text class="cell" x="410" y="328">test finds it here</text>
+  <text class="cell" x="620" y="328">and not in DynamoDB</text>
+
+  <text class="cap" x="20" y="394">maxReceiveCount is 2. The worker never deletes a message it failed on,</text>
+  <text class="cap" x="20" y="416">so SQS can count the failures.</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 690" width="860" height="690" role="img" aria-labelledby="t d">
+  <title id="t">Embedded mode and server mode</title>
+  <desc id="d">In embedded mode, your code, the AWS SDK clients and the emulator all run inside one test process; the SDK reaches the emulator through http_client() with no port or certificate, and each test gets fresh state. In server mode, your app or the AWS CLI calls a separate emulator process, a container or package, over HTTPS on localhost:9297 after you set AWS_ENDPOINT_URL; it works from any language and its state is shared.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+    <style>
+      .h { font: 700 22px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+      .cap { font: 15.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #475569; }
+      .title { font: 600 17px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+      .mono { font: 14px "Cascadia Mono", Consolas, Menlo, monospace; fill: #475569; }
+      .bound { font: 14px "Cascadia Mono", Consolas, Menlo, monospace; fill: #0369a1; }
+      .chip { font: 14.5px "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; fill: #334155; }
+      .line { fill: none; stroke: #64748b; stroke-width: 1.8; }
+    </style>
+  </defs>
+
+  <rect width="860" height="690" fill="#ffffff"/>
+
+  <text class="h" x="20" y="40">Embedded mode</text>
+  <text class="cap" x="20" y="66">The emulator is a library linked into your tests.</text>
+
+  <rect x="20" y="86" width="820" height="180" rx="16" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text class="bound" x="40" y="113">cargo test (one process)</text>
+
+  <rect x="45" y="132" width="180" height="70" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="title" x="135" y="163" text-anchor="middle">your code</text>
+  <text class="mono" x="135" y="184" text-anchor="middle">+ tests</text>
+
+  <rect x="335" y="132" width="180" height="70" rx="12" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text class="title" x="425" y="163" text-anchor="middle">AWS SDK</text>
+  <text class="mono" x="425" y="184" text-anchor="middle">clients</text>
+
+  <rect x="625" y="132" width="190" height="70" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text class="title" x="720" y="163" text-anchor="middle">emulator</text>
+  <text class="mono" x="720" y="184" text-anchor="middle">in memory</text>
+
+  <path class="line" d="M225 167H331" marker-end="url(#arrow)"/>
+  <path class="line" d="M515 167H621" marker-end="url(#arrow)"/>
+  <text class="mono" x="570" y="156" text-anchor="middle" style="font-size:12px">http_client()</text>
+
+  <rect x="45" y="222" width="96" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+  <text class="chip" x="93" y="242" text-anchor="middle">no port</text>
+  <rect x="151" y="222" width="134" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+  <text class="chip" x="218" y="242" text-anchor="middle">no certificate</text>
+  <rect x="295" y="222" width="186" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+  <text class="chip" x="388" y="242" text-anchor="middle">fresh state per test</text>
+
+  <text class="cap" x="20" y="292">Rust only. Used by the tests in this post. Cost: the first build compiles every service crate.</text>
+
+  <line x1="20" y1="322" x2="840" y2="322" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text class="h" x="20" y="366">Server mode</text>
+  <text class="cap" x="20" y="392">The emulator is a separate process you point at.</text>
+
+  <rect x="20" y="412" width="250" height="180" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text class="bound" x="40" y="439" style="fill:#475569">your process</text>
+  <rect x="45" y="458" width="200" height="70" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="title" x="145" y="489" text-anchor="middle">your app</text>
+  <text class="mono" x="145" y="510" text-anchor="middle">or AWS CLI</text>
+  <rect x="45" y="548" width="120" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+  <text class="chip" x="105" y="568" text-anchor="middle">any language</text>
+
+  <rect x="560" y="412" width="280" height="180" rx="16" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text class="bound" x="580" y="439">container / package</text>
+  <rect x="585" y="458" width="230" height="70" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text class="title" x="700" y="489" text-anchor="middle">emulator</text>
+  <text class="mono" x="700" y="510" text-anchor="middle">aws-emulator</text>
+  <rect x="585" y="548" width="150" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1"/>
+  <text class="chip" x="660" y="568" text-anchor="middle">state is shared</text>
+
+  <path class="line" d="M245 493H581" marker-end="url(#arrow)"/>
+  <text class="mono" x="413" y="482" text-anchor="middle">HTTPS</text>
+  <text class="mono" x="413" y="515" text-anchor="middle">localhost:9297</text>
+
+  <text class="cap" x="20" y="630">Set AWS_ENDPOINT_URL and run unchanged code from any SDK.</text>
+  <text class="cap" x="20" y="654">Used by the sample's CLI: provision, submit, work.</text>
+</svg>

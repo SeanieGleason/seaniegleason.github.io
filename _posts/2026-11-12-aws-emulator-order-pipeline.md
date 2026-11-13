@@ -149,6 +149,8 @@ async fn a_valid_order_is_stored_receipted_and_announced() {
 
 **Redelivery.** Upload the same order under two keys. One is `Processed`, the other is `Duplicate`, and the table has one row.
 
+This test failed on its first run, and the emulator was right. I had written it to stop after the worker reported any two outcomes. But when you configure a bucket notification, S3 sends an `s3:TestEvent` message to the queue, and my worker correctly reported it as `Ignored`. That used up one of the two slots before the duplicate arrived. The fix was to wait for the specific outcomes, not a count. It's exactly the kind of thing a mock would never have shown me.
+
 **Isolation.** Provision a pipeline in one emulator, create a second emulator, and list its buckets. The list is empty. This is why the tests can run in parallel without unique names or cleanup code.
 
 ## Checking whether your app will work
@@ -174,6 +176,10 @@ Building from source is officially supported on Linux only, and I hit that limit
 docker run --rm -v "$PWD/..:/work" -w /work/aws-emulator-order-pipeline \
   -e CARGO_TARGET_DIR=/work/target-linux rust:latest cargo test
 ```
+
+Give that container memory. With the 8 GB Docker Desktop has by default, the compiler was killed on the EC2 service crate, and later the whole Docker engine fell over while compiling the router that bundles every service. What got it through was 12 GB plus 24 GB of swap (set in `%UserProfile%\.wslconfig`), debug info off (`CARGO_PROFILE_DEV_DEBUG=0`), and one build job for the last few crates. After that, all five tests ran in under five seconds.
+
+In CI, a standard GitHub-hosted Linux runner (16 GB) is enough. The sample repo has a workflow that checks out the emulator beside the project, pinned to a commit, and builds on the runner's larger `/mnt` disk. The build directory is too big for the Actions cache, so every run is a full cold build. If that matters, use a self-hosted runner with a persistent `target/`.
 
 Or skip embedded mode, run the server-mode container, and point the same binary at it:
 
